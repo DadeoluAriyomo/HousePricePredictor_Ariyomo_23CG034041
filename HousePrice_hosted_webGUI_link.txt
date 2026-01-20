@@ -6,6 +6,6 @@ Machine Learning Algorithm Used: Random Forest Regressor
 
 Model persistence method used  Joblib (joblib.dump() and joblib.load())
 
-Live URL of the hosted application
+Live URL of the hosted application:
 
-GitHub repository link
+GitHub repository link: https://github.com/DadeoluAriyomo/HousePricePredictor_Ariyomo_23CG034041.git
