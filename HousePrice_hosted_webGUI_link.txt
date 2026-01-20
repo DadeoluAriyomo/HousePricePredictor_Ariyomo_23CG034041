@@ -1,0 +1,11 @@
+Name: Dadeolu Adegboyegun Ariyomo
+
+Matric Number: 23CG034041
+
+Machine Learning Algorithm Used: Random Forest Regressor
+
+Model persistence method used  Joblib (joblib.dump() and joblib.load())
+
+Live URL of the hosted application
+
+GitHub repository link

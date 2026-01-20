@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BlueBrick AI - Smart House Price Prediction</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+<div class="background-animation"></div>
+
+<div class="container">
+    <div class="header">
+        <h1 class="title">🏠 BlueBrick AI</h1>
+        <p class="subtitle">Smart House Price Prediction Engine</p>
+    </div>
+
+    <form method="POST" class="prediction-card">
+        <div class="form-section">
+            <h2 class="section-title">Property Details</h2>
+            
+            <div class="form-group">
+                <label for="overallqual">Overall Quality</label>
+                <input type="number" id="overallqual" name="overallqual" min="1" max="10" placeholder="Rate 1-10" required>
+                <span class="helper-text">Overall material and finish quality</span>
+            </div>
+
+            <div class="form-group">
+                <label for="grlivarea">Living Area</label>
+                <input type="number" id="grlivarea" name="grlivarea" placeholder="Square feet" required>
+                <span class="helper-text">Ground living area in sq ft</span>
+            </div>
+
+            <div class="form-group">
+                <label for="totalbsmtsf">Basement Area</label>
+                <input type="number" id="totalbsmtsf" name="totalbsmtsf" placeholder="Square feet" required>
+                <span class="helper-text">Total basement area in sq ft</span>
+            </div>
+
+            <div class="form-group">
+                <label for="garagecars">Garage Capacity</label>
+                <input type="number" id="garagecars" name="garagecars" min="0" placeholder="Number of cars" required>
+                <span class="helper-text">Size of garage in car capacity</span>
+            </div>
+
+            <div class="form-group">
+                <label for="yearbuilt">Year Built</label>
+                <input type="number" id="yearbuilt" name="yearbuilt" min="1800" max="2024" placeholder="YYYY" required>
+                <span class="helper-text">Original construction year</span>
+            </div>
+
+            <div class="form-group">
+                <label for="neighborhood">Neighborhood</label>
+                <select id="neighborhood" name="neighborhood" required>
+                    <option value="">📍 Select a neighborhood</option>
+                    <option value="NAmes">North Ames</option>
+                    <option value="CollgCr">College Creek</option>
+                    <option value="OldTown">Old Town</option>
+                    <option value="Edwards">Edwards</option>
+                    <option value="Somerst">Somerset</option>
+                </select>
+            </div>
+        </div>
+
+        <button type="submit" class="submit-btn">💡 Get Price Estimate</button>
+    </form>
+
+    {% if prediction %}
+    <div class="result-card">
+        <h3 class="result-label">Estimated Property Value</h3>
+        <div class="price-display">${{ "{:,.2f}".format(prediction) }}</div>
+        <p class="result-note">Based on ML analysis of market data</p>
+    </div>
+    {% endif %}
+</div>
+
+<footer class="footer">
+    <p>Dadeolu Ariyomo © 2026 | 🚀 Powered by Machine Learning | Real Estate Price Prediction AI</p>
+</footer>
+
+</body>
+</html>
